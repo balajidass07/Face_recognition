@@ -17,7 +17,7 @@ def detect(bw,org):   #bw-black n white image,org-original image
         #sun-zone of intrest for eyes in bw and orginal image
         bw_zone=bw[y:y+h,x:x+h]
         org_zone=org[y:y+h,x:x+h]
-        eyes=eye_cascade.detectMultiScale(bw,1.1,3) #similar to faces
+        eyes=eye_cascade.detectMultiScale(bw_zone,1.1,3) #similar to faces
         for(x1,y1,w1,h1) in eyes:
             #here two rectangles boxes for detecting 2 eyes
             cv2.rectangle(org_zone,(x1,y1),(x1+w1,y1+h1),(0,255,0),2)
